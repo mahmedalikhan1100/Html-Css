@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NEXTAG - Online Wallet & Purse Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: #fdfdfd; color: #222; }
+
+    h1, h2 { text-align: center; margin-bottom: 1rem; }
+
+    .tags {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .tags button {
+      padding: 0.5rem 1rem;
+      background: #eee;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tags button.active {
+      background: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .card {
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin-top: 0.8rem;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+    }
+
+    .card p {
+      margin: 0.3rem 0;
+    }
+
+    .card a {
+      display: inline-block;
+      margin: 1rem 0;
+      padding: 0.5rem 1rem;
+      background: #007bff;
+      color: white;
+      border-radius: 4px;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      background: #0056b3;
+    }
+
+    /* === Footer Style === */
+    .footer {
+      background: #2c3e50;
+      color: #ddd;
+      padding: 3rem 1rem 1rem;
+      font-size: 0.95rem;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .footer-logo h3 {
+      color: #fff;
+      margin: 0.5rem 0;
+    }
+
+    .footer-links h4,
+    .footer-contact h4 {
+      color: #fff;
+      margin-bottom: 0.7rem;
+    }
+
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-links ul li {
+      margin: 0.3rem 0;
+    }
+
+    .footer-links ul li a {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .footer-links ul li a:hover {
+      color: #f1c40f;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 2rem;
+      border-top: 1px solid #444;
+      padding-top: 1rem;
+      color: #aaa;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Collection</h1>
+
+  <div class="tags">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="wallet">Wallets</button>
+    <button class="filter-btn" data-filter="purse">Purse</button>
+  </div>
+
+  <div class="product-grid">
+    <div class="card" data-category="purse">
+      <img src="images/1.jpg" alt="fast">
+      <h3>fast</h3>
+      <p>light brown 120$</p>
+      <p>120$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+
+    <div class="card" data-category="purse">
+      <img src="images/2.jpg" alt="go">
+      <h3>go</h3>
+      <p>grey 150$</p>
+      <p>150$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+
+    <div class="card" data-category="purse">
+      <img src="images/3.jpg" alt="runner">
+      <h3>runner</h3>
+      <p>brown 100$</p>
+      <p>100$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+
+    <div class="card" data-category="wallet">
+      <img src="images/4.jpg" alt="slow">
+      <h3>slow</h3>
+      <p>black 50$</p>
+      <p>50$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+
+    <div class="card" data-category="wallet">
+      <img src="images/5.jpg" alt="brilion">
+      <h3>brilion</h3>
+      <p>light red 60$</p>
+      <p>60$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+
+    <div class="card" data-category="wallet">
+      <img src="images/6.jpg" alt="hogo">
+      <h3>hogo</h3>
+      <p>dark brown 80$</p>
+      <p>80$</p>
+      <a href="#">Go somewhere</a>
+    </div>
+  </div>
+
+  <!-- === Footer Start === -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo">
+        <h3>NEXTAG</h3>
+        <p>Premium Wallet & Purse Store</p>
+      </div>
+
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#collection">Collection</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p>Email: info@nextag.com</p>
+        <p>Phone: +92 300 1234567</p>
+        <p>Karachi, Pakistan</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 NEXTAG. All rights reserved.</p>
+    </div>
+  </footer>
+  <!-- === Footer End === -->
+
+  <script>
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.card');
+
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove active class from all buttons
+        buttons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.getAttribute('data-filter');
+
+        cards.forEach(card => {
+          const category = card.getAttribute('data-category');
+          if (filter === 'all' || filter === category) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
